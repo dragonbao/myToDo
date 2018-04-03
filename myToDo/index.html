@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>my-to-do-list</title>
+	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.css">
+	<script type="text/javascript" src="./vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<script type="text/javascript" src="./index.js"></script>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+<!-- <label class="checklabel">
+	<input  type="checkbox" name="">
+	<i class="fa-li fa fa-check-square checksign"></i>   
+
+</label>   -->
+<div class="myToDo">
+	<div class="page-top"><h2>任务计划表</h2></div>
+
+	<div class="task-title"><h4>添加任务：</h4></div>
+	<div class="add-task">
+		<input type="text" @keyup.enter="submit" v-model="newtask" name="" placeholder="  eg:请在此处输入你的新任务                        按下enter键/submit可以直接添加此任务！"><button type="button" @click="submit">submit</button>
+		<div class="task-menu" v-show="tasks.length">
+			<span class="nofinish-num">您有1个任务未完成</span>
+			<ul class="menu">
+				<li v-for="item in items">{{item.item}}</li>
+			</ul>
+		</div>
+		<!-- ==========任务分组菜单栏结束. -->
+	</div>
+	
+	
+	<div class="task-title">
+		<h4>{{tasklist}}</h4>
+	</div>
+	<div class="task-list">
+		<p class="notask" v-show="!tasks.length">&nbsp{{notask}}</p>
+		<ul class="task-items">
+			<li v-for="(item,index) in tasks" class="task-desc" :class="{finish:item.is}">
+
+				<label class="checklabel">
+					<input  type="checkbox" name="" v-model="item.is">
+					<i class="fa-li fa fa-check-square checksign"></i>   
+				</label>
+				 &nbsp;{{index+1}}: {{item.task}}
+				<input class="delect" value="delect" type="button" name="">
+				<input class="edit" type="button" name="" value="edit">
+			</li>
+		</ul>
+
+<p>{{newtask}}</p>
+	</div>
+	<!-- ==========mytodo finished -->
+</div>
+</body>
+</html>
