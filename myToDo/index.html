@@ -12,8 +12,7 @@
 	
 <!-- <label class="checklabel">
 	<input  type="checkbox" name="">
-	<i class="fa-li fa fa-check-square checksign"></i>   
-
+	<i class="fa-li fa fa-check-square checksign"></i>
 </label>   -->
 <div class="myToDo">
 	<div class="page-top"><h2>任务计划表</h2></div>
@@ -37,10 +36,10 @@
 	<div class="task-list">
 		<p class="notask" v-show="!tasks.length">&nbsp{{notask}}</p>
 		<ul class="task-items">
-			<li v-for="(item,index) in tasks" class="task-desc" :class="{finish:item.is}">
+			<li v-for="(item,index) in tasks" class="task-desc" :class="{finish:item.isChecked}"><!-- :class="{finish:isChecked}" -->
 
 				<label class="checklabel">
-					<input  type="checkbox" name="" v-model="item.is">
+					<input  type="checkbox" value="abc" name="" v-model="item.isChecked">
 					<i class="fa-li fa fa-check-square checksign"></i>   
 				</label>
 				 &nbsp;{{index+1}}: {{item.task}}

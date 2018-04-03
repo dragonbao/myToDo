@@ -17,7 +17,7 @@ window.onload=function(){
 			{task:"catch you breath"}
 			],
 			newtask:"",
-			// isChecked:""
+			isChecked:""
 		},
 		methods:{
 			submit(ev){
