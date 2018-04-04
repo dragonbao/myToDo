@@ -110,7 +110,7 @@ button[type="button"]{
 	display: inline-block;
 	height: 32px;
 	font-size: 16px;
-	width: 25%;
+	width: 24.8%;
 	padding-left: 5%;
 	color: #f36;
 	min-width: 167px;
@@ -121,9 +121,10 @@ button[type="button"]{
 	vertical-align: top;
 }
 .menu{
-	padding-left:20%;
-	width: 50%;
+	padding-left:44%;
+	width: 26%;
 	height: 32px;
+	min-width: 244px;
 }
 .menu li{
 	height: 30px;
@@ -169,7 +170,8 @@ button[type="button"]{
 	/*border-width: 1px 0;*/
 }
 .finish{
-	text-decoration: line-through red;
+	text-decoration: line-through #3c6;
+	color: #ccc;
 }
 .task-items li>input[type="button"]{
 

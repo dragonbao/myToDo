@@ -11,13 +11,13 @@ window.onload=function(){
 			tasklist:"任务列表",
 			notask:"还没有添加任何任务哦！",
 			tasks:[
-			{task:"读一本书"},
-			{task:"write a small program"},
-			{task:"be a better man"},
-			{task:"catch you breath"}
+			{task:"读一本书",ischecked:false},
+			{task:"write a small program",ischecked:false},
+			{task:"be a better man",ischecked:false},
+			{task:"catch you breath",ischecked:false}
 			],
 			newtask:"",
-			isChecked:""
+			// isChecked:""
 		},
 		methods:{
 			submit(ev){
@@ -25,7 +25,7 @@ window.onload=function(){
 				// console.log(this.newtask);
 				if(this.newtask!=""){
 				this.tasks.push({
-					task:this.newtask
+					task:this.newtask,ischecked:false
 				});
 			}
 				this.newtask ="";
@@ -33,6 +33,12 @@ window.onload=function(){
 			},
 			checkout(flag){
 				console.log(this);
+			},
+			delect(item){
+				alert(item)
+				var index = this.tasks.indexOf(item);
+				this.tasks.splice(index,1)
+
 			}
 		}
 

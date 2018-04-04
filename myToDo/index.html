@@ -43,7 +43,7 @@
 					<i class="fa-li fa fa-check-square checksign"></i>   
 				</label>
 				 &nbsp;{{index+1}}: {{item.task}}
-				<input class="delect" value="delect" type="button" name="">
+				<input class="delect" value="delect" @click="delect(item)" type="button" name="">
 				<input class="edit" type="button" name="" value="edit">
 			</li>
 		</ul>
