@@ -1,0 +1,10 @@
+webpack4+版本配置问题：
+ 	1：webpack4 版本的配置-进入要创建webpack管理的文件夹，(确认已安装node.js) npm init -y 后面的参数-y 
+ 	代表不会再寻问关于此文件夹下的package.json 的配置问题，一切按照默认进行.此命令代表在此文件夹下创建npm 环境.
+ 	2: npm install -D/G webpack 在此文件加下安装webpack，G代表全局安装，D代表本文件夹下安装，建议采用本文件夹下安装，便于移植.
+ 	3: webpack 打包的入口文件是：当前文件夹下的src/index.js 文件,手动创建此文件夹。
+ 	4:开始打包尝试,命令为： webpack mode --development 或者webpack --mode production 默认为production.
+ 		特别注意的是-->此命令的输入应该在根文件夹下进行，及此处的src的上层文件夹下,
+ 		否则报以下错误：
+ 		ERROR in Entry module not found: Error: Can't resolve './src' in 'D:\webpack-demo\src'
+ 	5 打包成功后的文件为main.js文件，保存在根目录下的路径为./dist/main.js.
