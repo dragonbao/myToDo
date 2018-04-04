@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex实现等高布局</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.container{
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-start;
+			align-items: stretch;
+			/*height: 500px;*/
+			/*background: #336;*/
+		}
+		.item1{
+			width: 50%;
+			background: #ccc;
+		}
+		.item2{
+			width: 50%;
+			background: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item1"><del>the quick brower fox jump over <br>the lazy dogthe quick br</del>the quick brower fox jump over <br>the lazy dogthe quick brower fox jump over
+		 <br>the lazy dogthe quick brower fox jump over <br>the lazy dogthe quick brower fox jump over
+		  <br>the lazy dog</div>
+		<div class="item2">hahhahah</div>
+	</div>
+</body>
+</html>

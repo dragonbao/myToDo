@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>position实现整屏等高布局(关键父元素设置position:absolute,top:xpx;bottom:ypx:，子元素top,bottom:0;)</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body {
+        margin: 0;
+        /*height: 100%;*/
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #555;
+    }
+    .layout {
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        bottom: 50px;
+    }
+    .layout__aside, .layout__main {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: #666;
+    }
+    .layout__main {
+        left: 210px;
+        right: 210px;
+        background:#369;
+    }
+    .layout__aside {
+        width: 200px;
+    }
+    .layout__aside--left {
+        left: 0;
+    }
+    .layout__aside--right {
+        right: 0;
+    }
+	</style>
+</head>
+<body>
+<header style="background: #f3f">顶部</header>
+<!-- 主要注意点：position absolute元素的宽度不会继承父元素宽度，需要手动设置-width:100%;或者是:left&right:0;
+当元素相对于body设置为absolute时，此时的top&bottom:0;得到的是整个浏览器屏幕的高度。-->
+<div class="layout">
+    <aside class="layout__aside layout__aside--left">左侧边栏宽度固定</aside>
+    <div class="layout__main">内容栏宽度自适应</div>
+    <aside class="layout__aside layout__aside--right">右侧边栏宽度固定</aside>
+</div>
+<footer>底部</footer>
+</body>
+</html>
