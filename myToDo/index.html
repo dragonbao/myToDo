@@ -33,6 +33,9 @@
 	<div class="task-title">
 		<h4>{{tasklist}}</h4>
 	</div>
+
+
+
 	<div class="task-list">
 		<p class="notask" v-show="!tasks.length">&nbsp{{notask}}</p>
 		<ul class="task-items">
@@ -42,15 +45,27 @@
 					<input  type="checkbox" value="abc" name="" v-model="item.isChecked">
 					<i class="fa-li fa fa-check-square checksign"></i>   
 				</label>
-				 &nbsp;{{index+1}}: {{item.task}}
+
+
+				 &nbsp;{{index+1}}: <span>{{item.task}}</span>
+
+				<!--  <div class="btns"> -->
 				<input class="delect" value="delect" @click="delect(item)" type="button" name="">
 				<input class="edit" type="button" name="" value="edit">
+				<input type="text" class="btns" placeholder="qwer">
+				<!-- </div> -->
 			</li>
 		</ul>
 
 <!-- <p>{{newtask}}</p> -->
 	</div>
 	<!-- ==========mytodo finished -->
+
+
+
+
+
+
 </div>
 </body>
 </html>

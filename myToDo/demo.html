@@ -1,1 +1,27 @@
-{\rtf1}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo 测试</title>
+</head>
+<body>
+	<ul>
+		<li>
+			<div class="box1" style="width: 500px;height: 500px;background: #ccc;"></div>
+
+		</li>
+	</ul>
+	<script type="text/javascript">
+		window.onload=function(){
+			var arr=[
+			{name:"dragon"},
+			{age:125},
+			{password:"long"}
+			]
+
+			var el = document.getElementsByClassName("box1")[0];
+			var index = arr.indexOf(name);
+			el.innerHTML = arr[0].name +index;
+		}
+	</script>
+</body>
+</html>
