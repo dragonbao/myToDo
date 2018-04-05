@@ -35,7 +35,7 @@ window.onload=function(){
 				console.log(this);
 			},
 			delect(item){
-				alert(item)
+				// alert(item)
 				var index = this.tasks.indexOf(item);
 				this.tasks.splice(index,1)
 
