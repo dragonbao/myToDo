@@ -8,3 +8,14 @@ webpack4+版本配置问题：
  		否则报以下错误：
  		ERROR in Entry module not found: Error: Can't resolve './src' in 'D:\webpack-demo\src'
  	5 打包成功后的文件为main.js文件，保存在根目录下的路径为./dist/main.js.
+ 	6. 启动监听来监控文件内容的变化：webpack --mode development --watch ;注意此处不要加npx webpack.....会报错。
+
+
+
+ 	7.创建实时刷新浏览器页面：通过webpack-dev-server实现。
+ 	命令：npm install -D webpack-dev-server,安装webpack-dev-server包，
+ 	启动该服务:npx webpack-dev-server --mode development，在浏览器中输入地址：http://localhost:8080/可以查看我们的index.html文件内容
+
+ 	8.新启动的服务器输出文件目录为文件根目录，与我们存放main的位置dist/main.js不相符，应该改到我们的dist文件目录下：
+ 	将第七条规则改为 npx webpack-dev-server --mode development --output-public-path dist.
+ 	注意此时的服务器端口号会改变，如改为8081等，不再是之前的8080端口号了，具体查看命令行的输出提示。
