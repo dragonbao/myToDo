@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>回到顶部</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.container{
+			/*width: 100%;*/
+			position: relative;
+			height: 5000px;
+			background:linear-gradient(#369,#3c3,#3fc);
+		}
+		.backtop{
+			width: 50px;
+			height: 50px;
+			background: #fff;
+			position: fixed;
+			top:800px;
+			right: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="backtop"></div>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var top =document.documentElement.scrollTop;
+			console.log(top);
+		// var timeout = setTimeout(back,3000);
+		var el = document.getElementsByClassName("backtop")[0];
+		// clearTimeout(timeout);
+		el.onclick=back;
+		function back(){
+			var backtop=function(){
+			var top =document.documentElement.scrollTop;
+			// console.log(top);
+			top-=10;
+			if(top>0){
+				window.scrollTo(0,top);
+			}
+			else {
+				window.scrollTo(0,0)
+				clearTimeout(time);
+				time=null
+			}
+		}
+
+			var time =setInterval(backtop,1)
+		}
+
+		}
+	</script>
+</body>
+</html>
