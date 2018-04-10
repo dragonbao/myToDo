@@ -15,23 +15,27 @@
 			background:linear-gradient(#369,#3c3,#3fc);
 		}
 		.backtop{
-			width: 50px;
-			height: 50px;
+			width: 100px;
+			height: 100px;
 			background: #fff;
+			border-radius: 50%;
 			position: fixed;
+			background:radial-gradient(#363,#3fc);
 			top:800px;
-			right: 0;
+			right: 10px;
+			line-height: 100px;
+			text-align: center;
 		}
 
 	</style>
 </head>
 <body>
 	<div class="container">
-		<div class="backtop"></div>
+		<div class="backtop">回到顶部！</div>
 	</div>
 	<script type="text/javascript">
 		window.onload=function(){
-			var top =document.documentElement.scrollTop;
+			var top =document.documentElement.scrollTop||document.body.scrollTop;
 			console.log(top);
 		// var timeout = setTimeout(back,3000);
 		var el = document.getElementsByClassName("backtop")[0];
