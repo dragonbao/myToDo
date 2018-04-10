@@ -47,12 +47,12 @@
 				</label>
 
 
-				 &nbsp;{{index+1}}: <span>{{item.task}}</span>
+				&nbsp;{{index+1}}: <span class="task-deus" :class="{editing:item.isedit}"  @dblclick="edititem(item)">{{item.task}}</span><!--  @dblclick="edit" -->
 
 				<!--  <div class="btns"> -->
 				<input class="delect" value="delect" @click="delect(item)" type="button" name="">
-				<input class="edit" type="button" name="" value="edit">
-				<input type="text" class="btns" placeholder="qwer">
+				<input class="edit" type="button" name="" @click="edititem(item)" value="edit">
+				<input type="text" class="btns" :class="{edittodo:item.isedit}" placeholder="      enter submit" autofocus>
 				<!-- </div> -->
 			</li>
 		</ul>

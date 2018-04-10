@@ -2,26 +2,71 @@
 <html>
 <head>
 	<title>demo 测试</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		#demo{
+			text-align: center;
+			line-height: 100px;
+			font-size: 20px;
+			color: #36e;
+			background: linear-gradient(to right,rgba(255,0,0,0),rgba(255,0,0,1))
+		}
+		/*.cl1{
+			display: none;
+			height: 200px;
+		}
+		.cl2{
+			display: block;
+			width: 100%;
+		}
+		.iput{
+			width: 500px;
+			background: #ccc;
+			height: 40px;
+			/*outline: none;
+		}*/
+		.li{
+			width: 400px;
+			height: 40px;
+		}
+		.inp1{
+			width: 100%;
+			height: 40px;
+		}
+	</style>
 </head>
 <body>
-	<ul>
+	<!-- <ul>
 		<li>
 			<div class="box1" style="width: 500px;height: 500px;background: #ccc;"></div>
 
 		</li>
-	</ul>
+	</ul> -->
+	<div class="cl1 cl2" id="demo">
+		这是一个div标签！
+	</div>
+	<input type="" class="iput" name="">
+	<ol>
+		<li class="li">
+			<input class="inp1" type="" name="" autofocus autocomplete="off">
+		</li>
+	</ol>
 	<script type="text/javascript">
-		window.onload=function(){
-			var arr=[
-			{name:"dragon"},
-			{age:125},
-			{password:"long"}
-			]
+		// window.onload=function(){
+		// 	var arr=[
+		// 	{name:"dragon"},
+		// 	{age:125},
+		// 	{password:"long"}
+		// 	]
 
-			var el = document.getElementsByClassName("box1")[0];
-			var index = arr.indexOf(name);
-			el.innerHTML = arr[0].name +index;
-		}
+		// 	var el = document.getElementsByClassName("box1")[0];
+		// 	var index = arr.indexOf(name);
+		// 	el.innerHTML = arr[0].name +index;
+		// }
 	</script>
 </body>
 </html>

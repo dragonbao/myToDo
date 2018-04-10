@@ -47,6 +47,9 @@
 .myToDo{
 	min-width: 934px;
 }
+.task-desc{
+	min-width:960px;
+}
 .task-title{
 	width: 50%;
 	min-width: 934px;
@@ -197,7 +200,36 @@ button[type="button"]{
 	color: #fff;
 }
 .btns{
-	width: 500px;
+	display: none;
+	width: 700px;
+	/*min-width: ;*/
 	height: 40px;
-	background: #ccc;
+	/*background: #fff;*/
+	box-sizing: border-box;
+	border:none;
+	border-radius: 5px;
+	
+}
+.btns::-moz-placeholder{
+	color:red;
+	text-shadow: 
+}
+.btn ::-webkit-input-placeholder{
+
+}
+
+.btns:focus{
+	border:solid 2px #33c;
+	vertical-align: bottom;/*此处如果没有设置vertical-aligin 为bottom 输入框的位置与li顶部会有间距，导致输入框边框在chrome下看不到下面*/
+}
+.edittodo{
+	display: inline-block;
+}
+.task-deus{
+	display: inline-block;
+	width: 700px;
+	/*background:#bbc;*/
+}
+.editing{
+	display: none;
 }
