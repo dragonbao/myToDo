@@ -16,37 +16,56 @@ window.onload=function(){
 			{task:"be a better man",ischecked:false,isedit:false},
 			{task:"catch you breath",ischecked:false,isedit:false}
 			],
-			newtask:""
-			
-			// isChecked:""
+			newtask:"",
+			previoustask:"",
+			notes:" **双击每条任务或者使用后面的edit按钮都能够重新编辑你的任务哦** "
 		},
 		methods:{
-			submit(ev){
-
-				// console.log(this.newtask);
+			submit(){
 				if(this.newtask!=""){
 				this.tasks.push({
 					task:this.newtask,ischecked:false,isedit:false
-				});
+				})
 			}
 				this.newtask ="";
-
 			},
 			checkout(flag){
-				console.log(this);
+				// console.log(this);
 			},
 			delect(item){
-				// alert(item)
 				var index = this.tasks.indexOf(item);
 				this.tasks.splice(index,1)
 			},
 			edititem(item){
-				console.log(item);
-				item.isedit = true;
-				// var index = this.tasks.indexOf(item);
-				// var btns =document.getElemensByClassName("btns")[index];
-				// btn.style.border = "2px #33c";
+				// con  sole.log(item);
+				this.previoustask = item.task;
+				item.isedit = !item.isedit;
+			},
+			update(item,ev){
+				// console.log(item)
+				item.task = ev.target.value;
+				item.isedit = !item.isedit;
+			},
+			updateto(item,ev){
+				// console.log(item)
+				item.task = ev.target.value;
+				item.isedit = item.isedit;
+			},
+			backtask(item){
+				// alert(1)
+				// console.log(this.previoustask)
+				item.task = this.previoustask;
+				item.isedit = false;
 
+			}
+		},
+		directives:{
+			"focus":{
+				update(el,binding){
+					if(binding.value){
+						el.focus();
+					}
+				}
 			}
 		}
 

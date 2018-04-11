@@ -37,6 +37,17 @@
 			width: 100%;
 			height: 40px;
 		}
+		.div1{
+			/*display: none;*/
+			width: 200px;
+			height: 200px;
+			background:#369;
+		}
+		.div2{
+			width: 200px;
+			height: 200px;
+			background:#36c;
+		}
 	</style>
 </head>
 <body>
@@ -55,6 +66,9 @@
 			<input class="inp1" type="" name="" autofocus autocomplete="off">
 		</li>
 	</ol>
+	<div class="div1">div1</div>
+	<div class="div2">div2</div>
+	<div class="div2">div1</div>
 	<script type="text/javascript">
 		// window.onload=function(){
 		// 	var arr=[
@@ -67,6 +81,11 @@
 		// 	var index = arr.indexOf(name);
 		// 	el.innerHTML = arr[0].name +index;
 		// }
+		window.onload=function(){
+			var obj = {length:3,1:1,2:2,"password":3};
+			var arr = Array.prototype.slice.call(obj);
+			console.log(arr);
+		}
 	</script>
 </body>
 </html>

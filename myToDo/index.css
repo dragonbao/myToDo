@@ -48,7 +48,7 @@
 	min-width: 934px;
 }
 .task-desc{
-	min-width:960px;
+	/*min-width:940px;*/
 }
 .task-title{
 	width: 50%;
@@ -151,6 +151,7 @@ button[type="button"]{
 }
 .task-list{
 	width: 50%;
+	min-width: 934px;
 	margin: auto;
 }
 .notask{
@@ -160,17 +161,15 @@ button[type="button"]{
 }
 .task-items{
 	list-style: none;
+	margin: auto;
 }
 .task-items li{
 	overflow: hidden;
-	/*text-decoration: line-through red;*/
-	/*color: red;*/
-	/*text-decoration-color: red;*/
+	position: relative;
 	height: 40px;
 	line-height: 40px;
 	border:1px solid #636;
 	margin:5px 0;
-	/*border-width: 1px 0;*/
 }
 .finish{
 	text-decoration: line-through #3c6;
@@ -178,6 +177,12 @@ button[type="button"]{
 }
 .task-items li>input[type="button"]{
 
+}
+/*==========注释：提醒编辑任务的方式=========*/
+.notes{
+	font-size: 12px;
+	color: #c3c;
+	font-weight: bold;
 }
 .delect,.edit{
 	float: right;
@@ -200,11 +205,10 @@ button[type="button"]{
 	color: #fff;
 }
 .btns{
+	position: absolute;
 	display: none;
 	width: 700px;
-	/*min-width: ;*/
 	height: 40px;
-	/*background: #fff;*/
 	box-sizing: border-box;
 	border:none;
 	border-radius: 5px;
@@ -214,7 +218,7 @@ button[type="button"]{
 	color:red;
 	text-shadow: 
 }
-.btn ::-webkit-input-placeholder{
+.btns ::-webkit-input-placeholder{
 
 }
 

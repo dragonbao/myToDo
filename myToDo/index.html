@@ -38,22 +38,28 @@
 
 	<div class="task-list">
 		<p class="notask" v-show="!tasks.length">&nbsp{{notask}}</p>
+		<p class="notes">{{notes}}</p>
 		<ul class="task-items">
-			<li v-for="(item,index) in tasks" class="task-desc" :class="{finish:item.isChecked}"><!-- :class="{finish:isChecked}" -->
-
+			<li v-for="(item,index) in tasks" class="task-desc"><!-- :class="{finish:isChecked}" -->
 				<label class="checklabel">
-					<input  type="checkbox" value="abc" name="" v-model="item.isChecked">
+					<input  type="checkbox" value="abc" name="" v-model="item.isChecked" >
 					<i class="fa-li fa fa-check-square checksign"></i>   
 				</label>
 
 
-				&nbsp;{{index+1}}: <span class="task-deus" :class="{editing:item.isedit}"  @dblclick="edititem(item)">{{item.task}}</span><!--  @dblclick="edit" -->
+				<span class="task-deus"  :class="{editing:item.isedit,finish:item.isChecked}"  @dblclick="edititem(item)">&nbsp;{{index+1}}: {{item.task}}</span><!--  @dblclick="edit" -->
 
 				<!--  <div class="btns"> -->
 				<input class="delect" value="delect" @click="delect(item)" type="button" name="">
 				<input class="edit" type="button" name="" @click="edititem(item)" value="edit">
-				<input type="text" class="btns" :class="{edittodo:item.isedit}" placeholder="      enter submit" autofocus>
-				<!-- </div> -->
+				<input type="text" :value="item.task" class="btns"
+				 @blur="update(item,$event)" 
+				 @keyup.esc="backtask(item)" 
+				 @keyup.enter="updateto(item,$event)"
+				 :class="{edittodo:item.isedit}"  
+				 v-focus="previoustask === item.task" 
+				  placeholder="      enter submit">
+				<!-- -->
 			</li>
 		</ul>
 
